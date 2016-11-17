@@ -1,0 +1,28 @@
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url( <%= image_path 'cocktail1.jpeg' %>);">
+  <div class="banner-content">
+    <h1>All the best cocktails in town bro !</h1>
+    <%= link_to "I want to create my coctkail", new_cocktail_path, :class=>"btn btn-danger" %>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+
+    <% @cocktails.each do |cocktail| %>
+      <div class="col-sm-6 col-md-4">
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path 'cocktail1.jpg' %>);">
+          <div class="card-description">
+            <h2><%= cocktail.name %> </h2>
+            <%= link_to "show", cocktail_path(cocktail), :class => "card-link" %>
+          </div>
+          <%= link_to "", cocktail_path(cocktail), :class=>"card-link" %>
+        </div>
+      </div>
+      <!-- end of col -->
+    <% end %>
+
+  </div>
+  <!-- end of row -->
+  <p><%= link_to "Add a cocktail", new_cocktail_path, :class => "btn btn-primary"%></p>
+</div>
+<!-- end of container -->
